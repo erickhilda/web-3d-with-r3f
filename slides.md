@@ -72,42 +72,40 @@ transition: slide-up
 
 # How to start?
 
+## 
+
 <img v-click src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ-sIy44su239UkC1TtyEBkV7oX3Z8rCVzlsYa1RddoA&s" width="218"></img>
 
 
 <div v-click>
 
-  - Pros:
-    - Fast and efficient 3D rendering on the client-side
-    - Low-level control over the rendering pipeline
-    - Support for advanced 3D features like shaders and textures
+- Natively support by "modern" browser
+- Gain overall control over the rendering pipeline
+- Steep learning curve due to low-level API
 
-  - Cons:
-    - Steep learning curve due to low-level API
-    - Requires a modern browser with WebGL support
-    - More verbose and less declarative than WebGL2
+learning resources:
+
+- [Creating 3D objects using WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Creating_3D_objects_using_WebGL)
 </div>
+
 
 ---
 transition: slide-up
 level: 2
 ---
 
-# 
-
 <img src="https://user-images.githubusercontent.com/5307958/38454395-eba34a8a-3a90-11e8-9c95-680a7aea037f.png" width="218"></img>
 
 <div v-click>
 
-  - Pros:
-    - Large community and many resources available
-    - Great for complex scenes and interactions
-    - Providing a higher level API for common 3D tasks, making it easier to use than pure WebGL.
+- Large community and many resources available
+- Providing a higher level API for common 3D tasks, making it easier to use than pure WebGL
+- Kinda less steep learning curve than barebone WebGL
+- Great for complex scenes and interactions
 
-  - Cons:
-    - Steep learning curve due to large API
-    - Requires a modern browser with WebGL support
-    - Not as efficient as WebGL2 for simple scenes
+learning resources:
+- [Three.js Docs.](https://threejs.org/)
+- [Three.js Journey by Bruno Simon](https://threejs-journey.com/)
 </div>
 
 ---
@@ -120,16 +118,12 @@ transition: slide-up
 
 <div v-click>
 
-  - Pros:
-    - Easy to learn and use
-    - High-level declarative API
-    - Reusable components
-    - Good for 2D and 3D scenes
-    - Good for beginners and advanced users
-    - Good for performance-critical scenes
+- Less friction when integrate into modern tools
+- Provide threejs abstarction as components
+- Have many utility tools around react environment
+- if you coming from react, it is easier to learn
 
-  - Cons:
-    - Not as efficient as raw WebGL for complex scenes
-    - Not as powerful as raw WebGL for advanced 3D features
-    - Not as flexible as raw WebGL for low-level control
+learning resources:
+- [Three.js Docs.](https://threejs.org/)
+- [r3f Docs.](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
 </div>
