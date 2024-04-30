@@ -110,6 +110,7 @@ learning resources:
 
 ---
 transition: slide-up
+layout: two-cols
 ---
 
 # 
@@ -127,3 +128,119 @@ learning resources:
 - [Three.js Docs.](https://threejs.org/)
 - [r3f Docs.](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
 </div>
+
+::right::
+
+````md magic-move
+```ts
+
+```
+
+```ts {*|3|4-6|7-8|*}
+// example of using threejs to create object
+...
+const geometry = new THREE.BoxGeometry(1, 1, 1); 
+const material = new THREE.MeshBasicMaterial({
+    color: 0x00ff00
+}); 
+const cube = new THREE.Mesh(geometry, material); 
+scene.add( cube );
+...
+```
+
+```ts {*|4|5|*}
+// how it will be as r3f
+...
+<mesh>
+    <boxGeometry args={[1, 1, 1]} />
+    <meshBasicMaterial color="hotpink" />
+</mesh>
+```
+
+```ts
+// how it will be as r3f
+...
+function Box(props: JSX.IntrinsicElements['mesh']) {
+    const mesh = useRef<Mesh>(null!)
+    const [hovered, setHover] = useState(false)
+    const [active, setActive] = useState(false)
+
+    return (
+        <mesh
+            ref={mesh}
+            scale={active ? 1.5 : 1}
+            onClick={() => setActive(!active)}
+            onPointerOver={() => setHover(true)}
+            onPointerOut={() => setHover(false)}
+            {...props}
+        >
+            <boxGeometry args={[1, 1, 1]} />
+            <meshBasicMaterial 
+                color={hovered ? 'hotpink' : 'orange'}
+            />
+        </mesh>
+    )
+}
+```
+````
+
+---
+transition: slide-up
+layout: two-cols
+layoutClass: gap-8
+---
+
+# Geometry
+
+<figure v-click>
+  <img src="https://www.mathsisfun.com/geometry/images/vertex.svg" width="128"></img>
+  <figcaption>Vertices</figcaption>
+</figure>
+
+<figure v-click>
+  <img src="https://www.mathsisfun.com/geometry/images/edges.svg" width="96"></img>
+  <figcaption>Edges</figcaption>
+</figure>
+
+<figure v-click>
+  <img src="https://www.mathsisfun.com/geometry/images/faces.svg" width="96"></img>
+  <figcaption>Faces</figcaption>
+</figure>
+
+::right::
+
+````md magic-move
+```ts
+
+
+```
+
+```ts
+import { Mesh } from 'three'
+import { useFrame } from '@react-three/fiber'
+import { useRef, useState } from 'react'
+
+function Box(props: JSX.IntrinsicElements['mesh']) {
+  const mesh = useRef<Mesh>(null!)
+  const [hovered, setHover] = useState(false)
+  const [active, setActive] = useState(false)
+  useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01))
+
+  return (
+    <mesh
+      {...props}
+      ref={mesh}
+      scale={active ? 1.5 : 1}
+      onClick={() => setActive(!active)}
+      onPointerOver={() => setHover(true)}
+      onPointerOut={() => setHover(false)}
+    >
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} wireframe />
+    </mesh>
+  )
+}
+
+export default Box
+```
+````
