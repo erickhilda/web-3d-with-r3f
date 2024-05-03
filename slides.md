@@ -191,7 +191,7 @@ layoutClass: gap-8
 ---
 
 # Geometry
-
+ 
 <figure v-click>
   <img src="https://www.mathsisfun.com/geometry/images/vertex.svg" width="128"></img>
   <figcaption>Vertices</figcaption>
@@ -244,3 +244,63 @@ function Box(props: JSX.IntrinsicElements['mesh']) {
 export default Box
 ```
 ````
+
+---
+transition: slide-up
+---
+
+# Camera
+
+camera config:
+- position
+- fov (field of view)
+- aspect
+- near
+- far
+
+
+resource:
+- [threejs camera](https://threejs.org/docs/?q=camera#api/en/cameras/Camera)
+- https://discourse.threejs.org/t/changing-pixelratio-based-on-fps-good-or-bad-idea/34563/2
+
+---
+transition: slide-up
+layout: two-cols
+---
+
+# Material
+
+### material that reflected by light
+- MeshStandardMaterial
+- MeshPhongMaterial
+- MeshLambertMaterial
+- RawShaderMaterial
+- ShaderMaterial
+- Shadow Material
+
+::right::
+
+### material that not reflected by light
+- MeshBasicMaterial
+- MeshMatcapMaterial
+- PointsMaterial
+- SpriteMaterial
+- LineBasicMaterial
+- LineDashedMaterial
+- MeshNormalMaterial
+
+
+---
+transition: slide-up
+---
+
+# Light
+
+https://www.tldraw.com/r/VD2TRJcViHPFUd-jUO2Hp?v=0,0,1442,859&p=1oAqklgRP5Te-KOv_SjOv
+
+---
+transition: slide-up
+---
+
+# Shadow
+
